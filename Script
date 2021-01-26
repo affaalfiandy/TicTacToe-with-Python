@@ -1,0 +1,160 @@
+#Show Row Games
+row1=['','','']
+row2=['','','']
+row3=['','','']
+def show_row():
+    print(row1)
+    print(row2)
+    print(row3)
+
+#Function For Asking Row Input Player
+def input_row():
+    row_position = ''
+    while row_position not in ['1','2','3']:
+        row_position = input("Choose row = ")
+        if row_position not in ['1','2','3']:
+            print("Choose the correct number")
+    return int(row_position)-1
+
+#Function For Asking Index Input Player
+def input_index():
+    index_position = ''
+    while index_position not in ['1','2','3']:
+        index_position = input("Choose position = ")
+        if index_position not in ['1','2','3']:
+            print("Choose the correct number")
+    return int(index_position)-1
+
+#Function for replace inside the row player 1
+def replacment_rowp1():
+    row = input_row()
+    index = input_index()
+    if row==0:
+        if index == 0 and row1[0]=='':
+            row1[0]='X'
+        elif index == 1 and row1[1]=='':
+            row1[1]='X'
+        elif index == 2 and row1[2]=='':
+            row1[2]='X'
+    elif row==1:
+        if index == 0 and row2[0]=='':
+            row2[0]='X'
+        elif index == 1 and row2[1]=='':
+            row2[1]='X'
+        elif index == 2 and row2[2]=='':
+            row2[2]='X'
+    elif row==2:
+        if index == 0 and row3[0]=='':
+            row3[0]='X'
+        elif index == 1 and row3[1]=='':
+            row3[1]='X'
+        elif index == 2 and row3[2]=='':
+            row3[2]='X'
+
+#Function for replace inside the row player 2
+def replacment_rowp2():
+    x = 1
+    row = input_row()
+    index = input_index()
+    if row==0:
+        if index == 0 and row1[0]=='':
+            row1[0]='O'
+        elif index == 1 and row1[1]=='':
+            row1[1]='O'
+        elif index == 2 and row1[2]=='':
+            row1[2]='O'
+    elif row==1:
+        if index == 0 and row2[0]=='':
+            row2[0]='O'
+        elif index == 1 and row2[1]=='':
+            row2[1]='O'
+        elif index == 2 and row2[2]=='':
+            row2[2]='O'
+    elif row==2:
+        if index == 0 and row3[0]=='':
+            row3[0]='O'
+        elif index == 1 and row3[1]=='':
+            row3[1]='O'
+        elif index == 2 and row3[2]=='':
+            row3[2]='O'
+
+#Function for main gameplay
+def gameplay():
+    print("Welcome to TicTacToe")
+    print("Created by Affa Alfiandy")
+    x = 0
+    show_row()
+    while x == 0:
+        print("Player 1")
+        replacment_rowp1()
+        show_row()
+        if row1[0] == 'X' and row1[1]=='X' and row1[2]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        elif row2[0] == 'X' and row2[1]=='X' and row2[2]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        elif row3[0] == 'X' and row3[1]=='X' and row3[2]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        elif row1[0] == 'X' and row2[0]=='X' and row3[0]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        elif row1[1] == 'X' and row2[1]=='X' and row3[1]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        elif row1[2] == 'X' and row2[2]=='X' and row3[2]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        elif row1[0] == 'X' and row2[1]=='X' and row3[2]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        if row3[0] == 'X' and row2[1]=='X' and row1[2]=='X':
+            print("Player 1 Win")
+            x += 1
+            break
+        print("player 2")
+        replacment_rowp2()
+        show_row()
+        if row1[0] == 'O' and row1[1]=='O' and row1[2]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        elif row2[0] == 'O' and row2[1]=='O' and row2[2]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        elif row3[0] == 'O' and row3[1]=='O' and row3[2]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        elif row1[0] == 'O' and row2[0]=='O' and row3[0]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        elif row1[1] == 'O' and row2[1]=='O' and row3[1]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        elif row1[2] == 'O' and row2[2]=='O' and row3[2]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        elif row1[0] == 'O' and row2[1]=='O' and row3[2]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+        if row3[0] == 'O' and row2[1]=='O' and row1[2]=='O':
+            print("Player 2 Win")
+            x += 1
+            break
+
+#Start the game
+gameplay()
